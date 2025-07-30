@@ -1,0 +1,332 @@
+.header {
+  text-align: center;
+  font-size: 24px;
+  background-color: #99336b;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+
+}
+
+/* Main layout */
+.main-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px;
+  background-color: #e8cfd9;
+  border-radius: 30px;
+  margin: 30px;
+  height: 80%;
+  /* flex-wrap: wrap; */
+}
+
+/* Rollcall container */
+.rollcall-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  width: 70%;
+  justify-items: center;
+}
+
+/* Title + subtitle */
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Table scroll container */
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin: auto;
+  overflow-y: auto;
+
+}
+
+/* Table */
+.rollcall-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+}
+
+.rollcall-table thead {
+  background-color: #99336b;
+  color: white;
+}
+.rollcall-table th{
+  padding: 10px;
+}
+.rollcall-table th,
+.rollcall-table td {
+  /* padding: 12px; */
+  text-align: center;
+  border: 1px solid #e8cfd9;
+}
+
+/* Button inside table */
+.toggle-btn {
+  width: 100%;
+  height: 45px;
+  background-color: white;
+  color: #99336b;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0;
+}
+
+.toggle-btn:hover {
+  background-color: #e6f0f7;
+  transform: none !important;
+}
+
+.toggle-btn.active {
+  background-color: #99336b;
+  color: white;
+}
+
+
+/* Action buttons */
+.actions {
+  width:40%;
+  margin: 15px 0;
+  text-align: center;
+  font-weight: 200;
+  display: flex;
+  justify-content: space-between;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #3f729b;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.link-button:hover {
+  color: white;
+  background-color: #99336b;
+}
+
+/* Stats panel */
+.stats-panel {
+  width: 25%;
+  background: #e8cfd9;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.stats-panel h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.attendance-count {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.section h4 {
+  margin-bottom: 10px;
+}
+
+.card-box {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-height: 200px;
+}
+
+.country-box {
+  font-size: 12px;
+  background-color: #f5f5f5;
+  padding: 6px;
+  border-radius: 4px;
+
+  /* Center text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+  /* Layout */
+  .main-layout {
+    flex-direction: column;
+    padding: 16px;
+    margin: 0;
+    gap: 24px;
+    border-radius: 0;
+    background-color: #f9f9f9;
+  }
+
+  /* Header */
+  .header {
+    font-size: 22px;
+    padding: 16px 12px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Rollcall Section */
+  .rollcall-container {
+    width: 100%;
+    padding: 0;
+    text-align: left;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 6px;
+    padding-left: 4px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #666;
+    padding-left: 4px;
+  }
+
+  /* Table */
+  .table-container {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+  }
+
+  .rollcall-table {
+    font-size: 13px;
+    min-width: 100%;
+  }
+
+  .rollcall-table th,
+  .rollcall-table td {
+    padding: 10px 6px;
+    text-align: center;
+  }
+
+  /* Buttons inside table */
+  .toggle-btn {
+    font-size: 14px;
+    height: 42px;
+    border-radius: 6px;
+    padding: 0 6px;
+    border: 1px solid #99336b;
+  }
+
+  .toggle-btn:hover {
+    background-color: #f4e3ec;
+  }
+
+  .toggle-btn.active {
+    background-color: #99336b;
+    color: white;
+  }
+
+  /* Actions */
+  .actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .link-button {
+    font-size: 15px;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #99336b;
+    background-color: #fff;
+    color: #99336b;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+
+  .link-button:hover {
+    background-color: #99336b;
+    color: white;
+  }
+
+  /* Stats Panel */
+  .stats-panel {
+    width: 100%;
+    padding: 20px 16px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    text-align: center;
+  }
+
+  .stats-panel h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #444;
+  }
+
+  .attendance-count {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #222;
+  }
+
+  /* Cards Grid */
+  .card-box {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 12px;
+    gap: 12px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .country-box {
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  }
+
+  /* Improve spacing around text blocks */
+  .section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-left: 4px;
+    color: #444;
+  }
+}

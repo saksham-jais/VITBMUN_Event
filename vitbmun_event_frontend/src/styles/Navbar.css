@@ -1,0 +1,95 @@
+/* Top Navbar Styling */
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1000;
+  font-family: 'Segoe UI', sans-serif;
+  height: 80px;
+}
+
+/* Center Title */
+.title-section {
+  flex: 1;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #2c5c88;
+  letter-spacing: 0.5px;
+}
+
+/* Hamburger Button */
+.hamburger {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 22px;
+  background-color: #f3f3f3;
+  color: #2c3e50;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger:hover {
+  background-color: #e2e6ea;
+}
+
+/* Optional: Status Dots and Icons (if needed) */
+.status-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 13px;
+  color: #495057;
+  margin-top: 4px;
+}
+
+.status-dots span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #5a7fa3;
+  border-radius: 50%;
+}
+
+/* Icon Buttons */
+.icon-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-buttons button {
+  background-color: #5a7fa3;
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.icon-buttons button:hover {
+  background-color: #3e6388;
+}

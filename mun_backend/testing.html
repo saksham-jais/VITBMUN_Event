@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Frontend</title>
+</head>
+<body>
+    <h1>Mode: <span id="mode">default</span></h1>
+    <h2>Counter: <span id="counter">0</span></h2>
+    
+<script>
+    const ws = new WebSocket("ws://localhost:8080");
+    const modeSpan = document.getElementById("mode");
+    const counterSpan = document.getElementById("counter");
+    var mode = "default";
+    ws.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        console.log("Received from server:", data);
+        
+        if (data.type === "stateUpdate") {
+            if(data.state.type !== mode) {
+                modeSpan.textContent = data.state.type;
+            }
+            counterSpan.textContent = data.state.counter;
+            mode = data.state.type; 
+        } else if (data.type == "counterUpdate") {
+            if(data.state.type !== mode) {
+                mode = data.state.type;
+                modeSpan.textContent = mode;
+            }
+            modeSpan.textContent = data.state.counter;
+        } else if (data.type === "reply") {
+            console.log("Server reply:", data.reply);
+          
+        }
+    };
+</script>    
+</body>
+</html>

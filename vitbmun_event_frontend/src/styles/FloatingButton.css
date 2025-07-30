@@ -1,0 +1,18 @@
+.floating-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color:  #7a2f5825;
+  color: white;
+  font-size: 32px;
+  border: none;
+  cursor: grab;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.floating-btn:active {
+  cursor: grabbing;
+  background-color: #7a2f5825;
+}

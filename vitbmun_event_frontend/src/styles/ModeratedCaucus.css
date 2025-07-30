@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  /* prevent horizontal scroll */
+}
+
+
+/* === Font Import === */
+@font-face {
+  font-family: 'Digital-7';
+  src: url('../assets/digital-7.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* === Root Variables === */
+:root {
+  --primary-color: #99336b;
+  --text-color: #444;
+  --light-bg: #ffffff;
+  --shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+/* === Global Styles === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+  color: var(--text-color);
+}
+
+.mc-container {
+  /* min-height: 100vh; */
+  background-color: var(--light-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px;
+  text-align: center;
+  background-color: #e8cfd9;
+  border-radius: 30px;
+  margin: 30px;
+  height: 80%;
+}
+
+/* === Header === */
+.mc-header {
+  text-align: center;
+  font-size: 24px;
+  background-color: #99336b;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* === Topic === */
+.mc-topic {
+  font-size: 42px;
+  font-weight: bold;
+  margin: 30px 0 20px;
+  color: var(--text-color);
+}
+
+/* === Timer Section === */
+.mc-timer-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin: 20px 0;
+  width: 90%;
+}
+
+.mc-timer-card {
+  background-color: #fff;
+  border-radius: 16px;
+  border: 2px solid #999;
+  padding: 20px;
+  width: 300px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.mc-time {
+  font-family: 'Digital-7', 'Courier New', monospace;
+  font-size: 100px;
+  letter-spacing: 2px;
+  color: #999;
+}
+
+.mc-label {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+/* === Controls === */
+.mc-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 30px 0;
+  width: 90%;
+}
+
+.mc-icon-button {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+  font-size: 22px;
+  color: var(--primary-color);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.mc-icon-button:hover {
+  transform: scale(1.1);
+  background-color: #f5f5f5;
+}
+
+.mc-play-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 14px 40px;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  width: 15%;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.mc-play-button:hover {
+  background-color: #7a2556;
+  transform: scale(1.05);
+}
+
+/* === Board Section === */
+.mc-board{
+  display: flex;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 300px;
+  gap: 30px;
+  margin: 10px;
+  box-shadow: var(--shadow);
+  justify-content: space-between;
+}
+.unmodmc-board {
+  display: flex;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  min-width: 400px;
+  min-height: 300px;
+  gap: 30px;
+  margin: 10px;
+  box-shadow: var(--shadow);
+}
+
+.mc-board-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  grid-auto-rows: 50px;
+  flex-shrink: 0;
+  width: 50%;
+  height: fit-content;
+}
+
+
+.mc-country {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color);
+  padding: 20px;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  height: 10%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mc-country:hover {
+  background-color: #ffe9f3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mc-country.selected {
+  border: 1px solid var(--primary-color);
+  background-color: #ffe1ef;
+}
+
+/* === Grid Layout for Country + Delegate === */
+.mc-right-column-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 50%;
+}
+.unmod_mc-right-column-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.mc-right-cell {
+  background-color: #fff;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.mc-right-column-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+  height: 15%;
+}
+
+.mc-blank-box {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  height: 85%;
+  width: 100%;
+  border: 1px dashed #ccc;
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+  .mc-board {
+    flex-direction: column;
+  }
+  .mc-board-grid,.mc-right-column-grid{
+    width: 100%;
+    height: 100%;
+  }
+  .mc-right-column-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mc-blank-box {
+    height: 200px;
+  }
+}
+
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .mc-timer-section {
+    gap: 20px;
+    width: 100%;
+  }
+
+  .mc-board {
+    grid-template-columns: 1fr;
+  }
+
+  .mc-controls {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+
+  .mc-play-button {
+    width: 100%;
+  }
+
+  .mc-timer-card {
+    width: 90%;
+  }
+
+  .mc-board-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,164 @@
+/* General Page Style */
+.rollcall-wrapper {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f8f8f8;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+
+/* Main Container */
+.rollcall-container-voting {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 25px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  max-width: 1200px;
+  margin: auto;
+}
+/* Main layout */
+.main-layout-voting {
+  background-color: #e8cfd9;
+  border-radius: 30px;
+  margin: 30px;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main Box */
+.main-box {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 30px;
+  /* background-color: #cabdbd; */
+  border-radius: 30px;
+  height: 80%;
+  align-items: center;
+  
+}
+/* First Round Section */
+.first-round {
+  width: 40%;
+  text-align: center;
+}
+
+.first-round h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #99336b;
+}
+
+.first-round select {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* Voting Buttons */
+.vote-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.vote-buttons button {
+  background-color: white;
+  border: 2px solid #99336b;
+  color: #99336b;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.vote-buttons button:hover {
+  background-color: #99336b;
+  color: white;
+}
+
+/* Outcome Section */
+.outcome-section {
+  width: 40%;
+  text-align: center;
+}
+
+.outcome-section h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #99336b;
+}
+
+.outcome-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.outcome-controls button {
+  background: none;
+  border: none;
+  color: #99336b;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.outcome-stats {
+  font-size: 16px;
+  color: #333;
+  margin: 12px 0;
+}
+
+.outcome-list {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  overflow-y: auto;
+}
+
+.actions-voting{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  justify-self: center;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .rollcall-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .first-round,
+  .outcome-section {
+    width: 100%;
+  }
+
+  .vote-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .rollcall-header {
+    font-size: 22px;
+    padding: 12px;
+  }
+}
